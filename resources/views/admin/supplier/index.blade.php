@@ -39,7 +39,6 @@
                                  <td>{{$data->nama_supplier}}</td>
                                  <td>{{$data->alamat}}</td>
                                  <td>{{$data->no_wa}}</td>
-
                                  <td>
                                      <form action="{{route('supplier.destroy',$data->id)}}" method="post">
                                         @method('delete')

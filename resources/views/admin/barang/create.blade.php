@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title','Tambah Barang')
+@section('title','Data Barang')
 
 @section('content_header')
 
@@ -13,7 +13,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Input Barang</div>
+                <div class="card-header">Input Barang Masuk</div>
                 <div class="card-body">
                    <form action="{{route('barang.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -26,17 +26,6 @@
                                 </span>
                             @enderror
                         </div>
-
-                        <div class="form-group">
-                             <label for="">Kategori Barang</label>
-                            <input type="text" name="kategori_brg" class="form-control @error('kategori_brg') is-invalid @enderror">
-                             @error('kategori_brg')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
                         <div class="form-group">
                             <label for="">Supplier</label>
                             <select name="id_supplier" class="form-control @error('id_supplier') is-invalid @enderror" >
@@ -50,8 +39,19 @@
                                 </span>
                             @enderror
                         </div>
+                        <div class="form-group">
+                        <label for="inputMDEx1">Kategori Barang </label>
+                        <br>
+                       <select class="form-control" name="kategori_brg" id="exampleFormControlSelect2">
+                           <option value="TKR">TKR</option>
+                           <option value="RPL">RPL</option>
+                           <option value="TBSM">TBSM</option>
+                           <option value="Kelas">Kelas</option>
+                       </select>
+                        </div>
+                      
 
-                        
+                            <button type="reset" class="btn btn-outline-warning">Reset</button>
                             <button type="submit" class="btn btn-outline-primary">Simpan</button>
                         </div>
                    </form>
